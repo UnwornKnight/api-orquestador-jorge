@@ -38,7 +38,7 @@ class AccesoRequest(BaseModel):
     recursos: List[str]
     rol_usuario: str
 
-class Usuario(BaseModel):  # sólo para la "BD" en memoria
+class Usuario(BaseModel):  
     nombre_usuario: str
     contrasena: str
     rol: str
