@@ -86,7 +86,7 @@ def require_roles(*roles):
 
 @app.post("/autenticar-usuario", response_model=Token, tags=["Seguridad"])
 def autenticar_usuario(datos: LoginRequest):
-    """Devuelve un token muy sencillo con formato `usuario:rol`."""
+    """Devuelve un token con formato `usuario:rol`."""
     user = usuarios_db.get(datos.nombre_usuario)
     if not user or user.contrasena != datos.contrasena:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Nombre de usuario o contraseña incorrectos")
